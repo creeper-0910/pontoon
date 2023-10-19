@@ -20,6 +20,3 @@ class Command(BaseCommand):
         User.objects.create_superuser(admin_email, admin_email, admin_password)
         Site.objects.filter(pk=1).update(name=app_host, domain=app_host)
 
-        Project.objects.filter(slug="pontoon-intro").update(
-            url=urljoin(site_url, "intro/")
-        )
